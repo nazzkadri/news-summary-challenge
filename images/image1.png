@@ -1,0 +1,14 @@
+https://content.guardianapis.com/search?to-date=2018-11-19&page-size=5&q=ukpolitics&apikey
+
+https://content.guardianapis.com/search?use-date=published&page-size=1&section=Politics&from-date=2018-10-18&order-by=newest&page=1&q=ukpolitics
+
+
+http://content.guardianapis.com/uk-news?section=Politics&from-date=2018-10-18&to-date=2018-10-19&order-by=newest&show-elements=image&page=1&page-size=1&
+
+
+http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/commentisfree/2018/oct/19/the-guardian-view-on-theresa-mays-brexit-march-to-stop-the-madness?show-fields=body
+
+
+http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk-news/2018/oct/19/devon-cornwall-police-admits-breaking-health-safety-law-thomas-orchard?show-fields=body
+
+http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk-news/2018/oct/19/scottish-farmer-tells-of-feeling-devastated-after-bse-case-found-in-herd?show-fields=body
