@@ -12,3 +12,7 @@ http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guar
 http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk-news/2018/oct/19/devon-cornwall-police-admits-breaking-health-safety-law-thomas-orchard?show-fields=body
 
 http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk-news/2018/oct/19/scottish-farmer-tells-of-feeling-devastated-after-bse-case-found-in-herd?show-fields=body
+
+
+
+http://content.guardianapis.com/tags?q=uk&section=politics&use-date=published1&from-date=2018-10-18&to-date=2018-10-19&order-by=newest&page-size=5show-references=all

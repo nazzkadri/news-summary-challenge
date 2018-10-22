@@ -2,9 +2,9 @@ var headlines = new Headlines();
 var responsedata;
 function renderList(){
 
-    headlines.getHeadlines("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?use-date=published&page-size=1&section=Politics&sectionName=UKnews&from-date=2018-10-18&order-by=newest&show-elements=image&page=1&page-size=5&q=politics?show-fields=body", callback)
+    //headlines.getHeadlines("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?q=uk&use-date=published&page-size=1&sectionId=politics&sectionName=Politics&from-date=2018-10-18&order-by=newest&show-elements=image&page=1&page-size=5&tag=politics&show-fields=all", callback)
     //getHeadlines("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/uk-news?section=Politics&from-date=2018-10-18&to-date=2018-10-19&order-by=newest&show-elements=image&page=1&page-size=1&show-fields=body", myFunction)
-    //getHeadlines("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/commentisfree/2018/oct/19/the-guardian-view-on-theresa-mays-brexit-march-to-stop-the-madness",callback)
+    headlines.getHeadlines("http://news-summary-api.herokuapp.com/guardian?apiRequestUrl=http://content.guardianapis.com/search?show-fields=thumbnail,headline,body",callback)
     
 };
 showCurrentPage();
@@ -16,16 +16,18 @@ function makeUrlChangeNote(){
 
 
 function callback(resultdata){
-    console.log('im in callback')
     var list_div = document.getElementById('list')
         list_div.innerHTML = "";
         responsedata = resultdata;
         for(let i=0; i<5; i++){
             list_div.innerHTML += "<h2>"+ resultdata.response.results[i].webTitle +"</h3>"
-            list_div.innerHTML += "<h2><li><a href='#news"+i+"'summary>" + resultdata.response.results[i].webTitle  + "</a></li></h2>";
+            list_div.innerHTML += "<h3><li><a href='#news"+i+"'summary>" + resultdata.response.results[i].webTitle  + "</a></li></h3>";
 
             //list_div.innerHTML += "<h2><li><a href='#news"+i+"'summary></a></li></h2>";
-            list_div.innerHTML += "<h3>Click the above link to see the summary page</h3>"
+            // list_div.innerHTML += "<h3>Click the above link to see the summary page</h3>"
+           // if ("thumbnail" in resultdata.response.results[i].fields) {
+            list_div.innerHTML += "<img src='" + resultdata.response.results[i].fields.thumbnail + "'/>" 
+        //}
             list_div.innerHTML += "<li><a href=" + resultdata.response.results[i].webUrl+ " target='_blank'>Click to see the Original Article</a></li>";
         }
 }
